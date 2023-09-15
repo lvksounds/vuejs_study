@@ -1,2 +1,57 @@
 Vue: Behind the Scenes 
 
+* Como o Vue funciona.
+
+- Introdução a reatividade do Vue
+  Todas as variaveis (dados) definidos no data(), são integrados em um objeto global.
+  Assim como os "methods", e todas as outras as outras funcionalidades core do vue.
+  Ou seja, o vue armazena tudo e fica vigiando os dados e metodos, que sao parte do objeto que ele criou. 
+
+  No JavaScript existe um recurso chamado proxy. 
+
+    *Como funciona o proxy no javascript: 
+      Proxy permite que criemos logicas personalizadas para objetos, podendo por exemplo criar validações para as manipulações dos objetos antes que as alterações sejam feitas no objeto original. 
+
+    A partir do uso do proxy, o vue consegue observar o objeto data(), e sempre que ocorre alguma mudança na propriedade, o Vue sabe. 
+Então, basicamente, o Vue possue um mecanismo que fica atento as mudanças na variaveis, e sempre que elas sao alteradas, o vue modifica tudo que usa esses dados que fora modificados para que eles se atualizem na tela. 
+
+--- Trabalhando com Refs 
+- uma maneira diferente de obter um valor de um elemento de input especifico; 
+
+'ref' é um atributo nao nativo da sintaxe html, que adicionamos no elemento quando. 
+
+Basicamente, a propriedade 'ref' no vue é utilizada para que a gente consiga referenciar um elemento html especifico no nosso codigo js. 
+Isso nos permite interagir diretamente com esses elementos / componentes . 
+
+A utilização de refs é mais apropriada quando a gente precisa acessar elementos DOM para realizar ações especificas que não podem ser alcançadas facilmente com a abordagem reativa padrao do Vue, tipo chamadas a api ou alguma animação complexa. 
+
+--- Como o Vue atualiza o DOM? 
+
+- O vue usa uma estrategia que chama Virtual DOM. 
+
+Basicamente, quando a pagina é renderizada, ele cria uma copia arvore DOM da pagina. Quando qualquer dado reativo é alterado, uma nova arvore é gerada e é comparada com a anterior, atualizando assim as mudanças que sao encontradas. 
+
+
+--- LifeCycle de Instancia do Vue 
+- o LifeCycle é um conjunto de metodos que promovem acesso a varias etapas ou "hooks" diferentes da renderização de um componente.
+Esses hooks permitem que realizemos ações personalidades em varias fases desse ciclo, de acordo com o que queremos fazer 
+ 
+os Hooks sao separados em: 
+
+  Criação: 
+    - beforeCreate() - é acionado antes que o vue inicialize o componente, propriedades e eventos nao estao disponiveis. 
+    - created() - componente ja inicializado. Eventos e propriedades ja disponiveis para manipulação. 
+
+  Montagem: 
+    - beforeMount() - acionado antes que o componente seja anexado ao DOM. o DOM ainda nao foi renderizado. 
+    - mounted() - componente anexado ao dom, momento apropriado para manipulações do DOM e chamadas de api externas. 
+
+  Atualização: 
+    - beforeUpdate() - acionado antes que o vue atualize o DOM para refletir as mudanças feitas. 
+    - updated() - componente ja atualizado e mudanças refletidas no DOM. Momento para manipulação de DOM após alterações. 
+
+  Destruição:
+    - beforeDestroy() - acionado antes que o componente seja destruido. Util para limpar recursos, como temporizadores ou ouvintes de eventos.
+    - destroyed() - o componente foi destruido e todas as instancias e referencias relacionadas a ele foram removidas. 
+
+    

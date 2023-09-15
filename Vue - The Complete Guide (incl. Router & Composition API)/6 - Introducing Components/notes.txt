@@ -1,0 +1,14 @@
+ ** Introdução a componentes. 
+
+ - Componentes sao essenciais no vue pois nos permite a reutilização e encapsulamento de blocos de elementos + logica.
+ - Podemos reutilizar o mesmo componente em varias partes da pagina passando dados e parametros diferentes para cada uso especifico.
+
+ * criar um componente no vue:  
+utilizamos o app. 
+
+app.component('nome-do-componente', {props});
+
+- recebe dois parametros: 
+  1 - identificador: nome do componente.
+  2 - props: dados que serao usados no componente, logicas, metodos.
+  Um componente é como se fosse um "mini-app", terá seus proprios items "data", "methods" etc.
