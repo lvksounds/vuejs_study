@@ -1,0 +1,28 @@
+** Comunicação entre componentes. 
+obs: mesmo projeto do modulo anterior
+
+- Props (comunicação Pai => filho)
+
+
+props (abreviação para propriedades), sao utilizados na comunicação de pai para filho no vue. 
+Nos componentes nos, definimos a logica e a estrutura, porem, nem todos os dados sao estaticos, e precisam as vezes vir de fora. 
+
+definimos as propriedades de um componente utilizando a palavra chave 'props: ...", e definimos da mesma maneira que os outros metodos chaves do vue (data, mounted, methods, etc); 
+
+Para passar os dados, chamamos as propriedades no elemento html do componente, ex:
+  <friend-contact name="lucas" phone-number="1029998273">
+  </friend-contact>
+
+  enquanto, dentro do componente, é definido da seguinte maneira. 
+
+  por array (maneira mais simples): 
+    props: ["name", "phoneNumber", "emailAddress"];
+
+  para acessar essas propriedades, utlizamos a palavra chave "this"; 
+
+para chamar as propriedades dentro da template html, usamos o nome puro, nao há necessidade de usar o "this".
+
+Nesse tipo de comunicação, existe o conceito de comunicação unilateral, que quer dizer:
+  - os dados que sao passados do componente PAi, NAO podem ser alterados no componente filho, portanto, dentro do componente nao deve existir atribuição ou modificação de valor de propriedades diretamente.
+  Se caso seja realmente necessario a manipulçao das propriedades dentro do componente, podemos fazer de duas maneiras: 
+    1°: fazer uma copia do valor da prop para uma variavel em Data.
