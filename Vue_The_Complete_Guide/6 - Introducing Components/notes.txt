@@ -12,3 +12,6 @@ app.component('nome-do-componente', {props});
   1 - identificador: nome do componente.
   2 - props: dados que serao usados no componente, logicas, metodos.
   Um componente é como se fosse um "mini-app", terá seus proprios items "data", "methods" etc.
+
+  Basicamente: componentes sao peças reutilizaveis de html com dados e logica conectados; 
+
