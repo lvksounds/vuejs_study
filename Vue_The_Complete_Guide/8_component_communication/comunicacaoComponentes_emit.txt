@@ -1,0 +1,56 @@
+** Comunicação entre componentes.  - Emit (custom events) 
+
+Se o componente filho precisa se comunicar com o componente pai, ele precisa disparar (emitir) um evento. 
+
+! No vue, podemos criar/emitir eventos customizados.
+
+ - como funciona: 
+
+ o emit funcionara como um evento, o componente pai estara sempre ouvindo (esperando) um evento customizado. 
+
+ primeiro definimos o evento no componente filho, chamando ele como qualquer outro evento: 
+
+<button @click="toggleFavorite">Toggle Favorite</button>
+
+definição: 
+toggleFavorite() {
+      this.$emit("toggle-favorite", this.id);
+    },
+
+chamamos o metodo $emit, que é nativo do Vue; 
+
+como parametro, primeiro passamos o nome do evento (que precisaremos definir tb no componente pai)
+os outros parametros, sao as propriedades que queremos passar. 
+
+
+no componente pai, chamamos o evento diretamente pelo nome, como se fosse o "@click", nesse caso chamaremos:
+
+<friend-contact @toggle-favorite="metodo"></friend-contact>
+
+- Definição de emits no componente. 
+Assim como props, emits também podem ser previamente definidos como uma maneira de documentar o que esta sendo feito dentro do componente. 
+
+Usando a chave "emits", conseguimos definir quais sao os possiveis eventos customizados que podem ser usados dentro do nosso componente. 
+
+podemos defini-los de duas maneiras; 
+
+deifnindo como um array de strings: 
+
+- emits: ['toggle-favorite]
+
+ou, como um objeto, podendo ter logicas especificas como validação, por exemplo, assim como as props. Esse objeto ira receber a chave como o nome do evento e o valor como uma função em que os argumentos dessa função sao os mesmo que estao sendo enviados no emit
+
+emits: {
+  'toggle-favorite' : function(id) {
+    if (id) {
+      return true;
+    } else {
+      console.warn('Id is missing');
+      return false;
+    }
+  }
+}
+
+nesse exemplos adicionamos uma logica de validação para o id que sera passado no emit ; 
+
+

@@ -1,4 +1,4 @@
-** Comunicação entre componentes. 
+** Comunicação entre componentes. - Props
 obs: mesmo projeto do modulo anterior
 
 - Props (comunicação Pai => filho)
@@ -26,3 +26,35 @@ Nesse tipo de comunicação, existe o conceito de comunicação unilateral, que quer
   - os dados que sao passados do componente PAi, NAO podem ser alterados no componente filho, portanto, dentro do componente nao deve existir atribuição ou modificação de valor de propriedades diretamente.
   Se caso seja realmente necessario a manipulçao das propriedades dentro do componente, podemos fazer de duas maneiras: 
     1°: fazer uma copia do valor da prop para uma variavel em Data.
+
+
+* Validação de props: 
+- a outra maneira que temos de definir props, é atribuindo um objeto a ela e adicionando mais parametros, por ex: 
+
+  props: {
+    name: {
+      type: String,
+      required: true,
+    }
+  }
+
+a propriedade name, nesse caso, é definida com o tipo String, e é obrigatoria. Caso a gente utilize o componente sem passar valor pra essa propriedade, teremos um aviso no console dizendo que uma propriedade obrigatoria está sem valor. 
+
+também podemis definir funções de validação e valores default
+
+isFavorite: {
+      type: String,
+      required: false,
+      default: "0",
+      validator: function (value) {
+        return value === "1" || value === "0";
+      },
+    }
+
+nesse exemplo, a propriedade não é obrigatoria, entao nao teremos aviso no console caso nao passemos um valor pra ela, pois, alem disso, ela também ja recebe um valor padrao. 
+
+
+Propriedades dinamicas: 
+
+para utilizar propriedades com valores dinamicos, utilizamso o ":" ou o "v-bind" e atribuimos o dado que sera usado na propriedade dinamica.
+
