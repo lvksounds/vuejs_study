@@ -1,0 +1,19 @@
+** Slots      
+  O slots é um recurso do Vue que nos permite criar um espaço reservado em um componente onde podemos inserir um conteudo personalizado de outro componente. 
+
+  Definição:
+  No componente filho, definimos slots usando a tag <slots></slots> dentro do template. Podemos usar atributos para nomear slots, o que nos permite criar varios slots num so template. 
+  ex: 
+    <template>
+      <div>
+        <slot></slot>
+      </div>
+    </template>
+  
+  No componente pai: 
+    utilizamos o componente filho que foi criado para o slot no template, ENTRE as tags de abertura e fechamento do componente filho: 
+      <template>
+        <meu-componente-filho>
+          Conteúdo do slot aqui.
+        </meu-componente-filho>
+      </template>

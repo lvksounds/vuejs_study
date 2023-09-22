@@ -1,0 +1,25 @@
+-- Comunicação entre componentes - resumo 
+
+* Em geral, componentes sao usados para construir interfaces de usuário, cimbinando-os
+A grande vantagem de um componente é que podemos encapsular a logica em um template, dividir o codigo em partes menores e tambem podemos reutilizar componente, por exemplo, componentes que encapsulam itens de lista. 
+
+* Componentes formam relaçoes pai-filho automaticamente: se usarmos componente B no componente A, entao A é pai de B. 
+
+Isso é importante, quando se trata de comunicação entre componentes, precisamos manter em mente que o Vue usa fluxo de dados unidirecionais para comunicação,
+portanto, temos maneiras especificas de passar dados para baixo em um componente, ou para cima. 
+
+Esses metodos sao: 
+
+Props: 
+  (pai => filho): se comunica para baixo, devemos definir as props com antecedencia no componente filho que receberá os dados. 
+  Podemos definir um array com as props que queremos receber ou criar uma definição mais detalhada usando um objeto. 
+
+Eventos Customizados:
+  (filho => pai): um componente pode emitir um evento personalizado com ajuda do metodo embutido $emit para permitir que o componente pai saiba de algo para acionar um codigo ou um metodo no componente pai.
+  Eventos customizados também transportam dados
+
+Provide-Inject: se o dado precisa passar por muitos componentes que basicamente apenas PASSAM esses dados, utilizamos o provide no componente pai pra enviar pro filho que precisa receber esses dados de maneira mais direta, sem precisar definir props e sem importar o quao profundo na arvore de descendencia esse componente filho esta. 
+
+
+
+

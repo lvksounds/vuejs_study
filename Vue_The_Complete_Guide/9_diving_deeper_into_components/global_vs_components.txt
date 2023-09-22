@@ -1,0 +1,23 @@
+** Mergulhando mais afundo em componentes 
+
+* Global vs Local Components
+
+Global components sao definidos no arquivo main.js e podem ser usados em qualquer lugar na nossa aplicação Vue. 
+
+definição:
+  import Header from './components/Header.vue'
+  app.component('header', Header);
+
+  Desvantagens dessa definição: 
+    Cade componente contem um pouco de codigo, e claro que esse codigo aumenta, conforme o tamanho da aplicação aumenta.
+    quando definimos componentes globalmente, Vue carrega todos eles de uma vez só quando carrega o aplicativo, o que pode implicar em problemas de performance dependendo do tamanho dos componentes. 
+
+Definindo um componente localmente, nos o restringimos para ser usado apenas no arquivo em que ele sera chamado, dessa maneira: 
+  <script>
+  import {Header} from "./components/TheHeader.vue"
+  export default App {
+    componets: {
+      'header': TheHeader
+    }
+  }
+  </script>

@@ -1,0 +1,28 @@
+-- Utilizando o provide
+ 
+ Provide é uma ferramenta fornecida pelo Vue que nos permite criar uma comunicação mais rapida entre componetes pai => filho, e filho => filho, sem que seja preciso o uso e definição de props.
+ No entendando o uso de props nao deve ser substituido; 
+ Utilizados provider e inject quando temos por exemplo um componente em que a unica funcionalidade dele é passar dados para outro componente. 
+ por ex: uma caixa de decisao ou de escolha de um determinado conteudo a ser exibido na tela, baseado na sua escolha. 
+
+ como utilizar: 
+  definimos no componente pai a chave "provide", como uma funçao que retorna um objeto e esse objeto é onde definimos o que queremos passar para o componente filho: 
+
+  provide(){
+    return {
+      topicos: this.topics <----- this.topics representa um array de objetos que definem topicos sobre um assunto especifico
+    }
+  }
+
+  no componente filho, definimos: 
+
+  inject: ['topics']
+
+
+  esse componente filho, essencialmente esta em uma hierarquia menor em relação ao componente pai, provavelmente sendo filho de um filho do componente pai; 
+  o dado sera enviado do pai diretamente pra ele, evitando que precisamos escrever props mais de uma vez no componente intermediario
+
+
+  portando, provide deve ser usado com sabedoria, seu uso exagerado pode tornar o codigo dificil de entender, prefira sempre props e eventos customizados; 
+
+  

@@ -1,0 +1,24 @@
+** Scoped Styles 
+
+- Naturalmente, quando adicionamos estilo nos nossos componentes, eles sao aplicados de forma global, entao, se eu tiver um estilo especifico pra um button em um componente, mas em algum outro componente existir uma estilização diferentes pra esse elemento, o style irá quebrar. 
+
+- Normalmente, queremos definir um estilo para toda a aplicação no arquivo App.vue.
+
+- Mas para estilos em um componente individual utilizamos a palavra chave scoped:
+
+Definição: 
+  <style scoped>
+    header {
+      width: 100%;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #14005e;
+    }
+
+    header h1 {
+      color: white;
+      margin: 0;
+    }
+  </style>
