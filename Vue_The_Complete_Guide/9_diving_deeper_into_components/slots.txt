@@ -6,14 +6,27 @@
   ex: 
     <template>
       <div>
+        <header>
+          <slot name="header"></slot>
+        </header>
         <slot></slot>
       </div>
     </template>
   
   No componente pai: 
     utilizamos o componente filho que foi criado para o slot no template, ENTRE as tags de abertura e fechamento do componente filho: 
+      
+      <template v-slot:header>
+          <h2>Cabeçalho</h2>
+      </template>
+
       <template>
         <meu-componente-filho>
           Conteúdo do slot aqui.
         </meu-componente-filho>
       </template>
+
+Quando usamos slosts em um componente, o conteudo sendo passado pelo componente pai substitui o slot correspondente no componente filho. Isso permite que criemos componentes mais flexiveis e reutilizaveis, onde o conteudo e o layout podem ser presonalizados quando o componente é usado em diferentes conextos. 
+
+Shorthand:
+  #header = v-slot="header"

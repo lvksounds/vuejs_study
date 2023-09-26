@@ -1,0 +1,3 @@
+** Scoped Slots. 
+
+O conceito de Scoped Slots permite que a gente passe dados de onde definimos um slot para o componente aonda passamos a marcação (html) do slot
