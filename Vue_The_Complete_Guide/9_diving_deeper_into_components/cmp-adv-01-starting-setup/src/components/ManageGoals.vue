@@ -3,11 +3,13 @@
   <input type="text" ref="goal" />
   <button @click="setGoal">Set goal</button>
 
-  <error-alert v-if="inputIsValid">
-    <h2>Input is invalid!</h2>
-    <p>Please enter att least a few characters...</p>
-    <button @click="confirmError">Okay</button>
-  </error-alert>
+  <teleport to="body">
+    <error-alert v-if="inputIsValid">
+      <h2>Input is invalid!</h2>
+      <p>Please enter att least a few characters...</p>
+      <button @click="confirmError">Okay</button>
+    </error-alert>
+  </teleport>
 </template>
 
 <script>

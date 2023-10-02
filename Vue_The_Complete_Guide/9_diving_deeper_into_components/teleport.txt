@@ -1,0 +1,9 @@
+** Componente Teleport 
+
+Teleport é um componente integrado do vue assim como component e keep-alive.
+Ele recebe apenas uma propriedade, a prop "to="
+Passamos para essa propriedade uma classe css que dira aonde esse componente devera ser adicionado no html, ou, pra onde devera ser transportado. 
+
+Ou seja, o componente teleport faz com que o componente que esta sendo passado pra ele seja renderizado dentro do elemento que estamos passando como referencia na propriedade "to". 
+
+
