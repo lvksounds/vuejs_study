@@ -2,4 +2,22 @@
 
 Registro de componentes e styles:  
   - componentes podem ser registrados globalmente (app.component('componente-name', Component)) e localmente (importando o componente filho dentro do componente pai).
-  - Styles podem ser globais ou scoped, para estilizar componentes, damos preferencia ao estilo scoped
+  - Styles podem ser globais ou scoped, para estilizar componentes, damos preferencia ao estilo scoped; 
+
+
+Slots: 
+  - Slots podem ser usados como um "placeholder" para codigo html dinamico, que pode entao ser inserido de fora em um componente.
+  - Podemos ter apenas um, ou varios slots, basta nomea-los.
+  - Podemos fornecer conteudo default para um slot, que pode ser usado com fallback caso nenhum conteudo seja forncecido para esse slot
+
+
+O componente "component": 
+  - Componentes podem ser trocados dinamicamente por meio do componente embutido 'component'
+  - Podemos tambem controlar o caching do component pelo "keep-alive", que mantem o component vivo na arvore dom.
+
+Teleport e StyleGuide: 
+  - teleport também é um componente imbutido, que nos permite manipular a hierarquia de componentes (DOM).
+  - Style guides é o padrao que o vue disponibiliza para organização de projetos e codigo. 
+  
+   
+

@@ -1,11 +1,12 @@
 ** Componentes dinamicos
 
-Componentes dinamicos, é um conceito no vue que nos adianta muito como programadores. 
-O Vue nos fornece um elemento html especial chamado "component". Ele nao imprime nada na tela sendo chamado sozinho, porem ele recebe uma propriedade especial chamada "is". 
+Componentes dinamicos, Ã© um conceito no vue que nos adianta muito como programadores. 
+O Vue nos fornece um elemento html especial chamado "component". 
+Ele nao imprime nada na tela sendo chamado sozinho, porem ele recebe uma propriedade especial chamada "is". 
 
-Quando tivermos uma situação em que o componente que precisa ser exibido é condicional, como por exemplo uma navegação por abas, ou clique do usuário para escolher o que mostrar a partir disso, nos utilizamos essa abordagem. 
+Quando tivermos uma situaÃ§Ã£o em que o componente que precisa ser exibido Ã© condicional, como por exemplo uma navegaÃ§Ã£o por abas, ou clique do usuÃ¡rio para escolher o que mostrar a partir disso nos utilizamos essa abordagem. 
 
-definição: 
+definiÃ§Ã£o: 
 
   * html: 
     <template>
@@ -22,9 +23,9 @@ A propriedade is precisa ser chamada junto com o v-bind: ou (":")
 
 ** Mantendo componentes dinamicos vivos. 
 
-Utilizando essa tecnica, nos temos um problema: caso algum dos componentes que esteja sendo renderizado dinamicamente possua algum campo de input por exemplo, caso a gente preencha esse campo e mude de componente, o conteudo do input é perdido, isso porque o DOM destroi o componente da arvore, logo o conteudo deixa de existir. 
+Utilizando essa tecnica, nos temos um problema: caso algum dos componentes que esteja sendo renderizado dinamicamente possua algum campo de input por exemplo, caso a gente preencha esse campo e mude de componente, o conteudo do input Ã© perdido, isso porque o DOM destroi o componente da arvore, logo o conteudo deixa de existir. 
 
-Uma maneira de corrigir isso que o proprio vue fornece é utlizando o componente <keep-alive></keep-alive> em volta do componente dinamico: 
+Uma maneira de corrigir isso que o proprio vue fornece ï¿½ utlizando o componente <keep-alive></keep-alive> em volta do componente dinamico: 
 
     <keep-alive>
       <component :is="selectedComponent"></component>
