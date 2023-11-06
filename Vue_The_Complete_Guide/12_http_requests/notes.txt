@@ -1,0 +1,19 @@
+-- Http Resquests no vue, utilizando o fetch 
+
+- Utilizamos o metodo fetch para gravar ou buscar dados. 
+- fetch(url, optionsObject): 
+  url: a url na qual iremos buscar ou gravar dados.
+  optionsObject: é um objeto que passamos com as configurações da requisição: metodo, headers, body, etc; 
+
+
+-- Carregando os dados quando um component é montado (mounted)
+- Quando queremos trazer informações na tela quando o aplicativo carrega, podemos chamar o metodo que faz o fetch na option "mounted"
+
+-- Adicionando uma mensagem de carregamento.
+- A melhor maneira é trabalhadar em cima de uma propriedade do data(). 
+- Criamos uma propriedade booleana tipo "isLoading" e trabalhamos condicionalmente em cima dela: 
+  se for true, aparece a mensagem de load, se for false, mostra o conteudo. 
+
+- Essa propriedade é false por padrao. no inicio do metodo que fara o fetch, setamos para true, antes do fetch. 
+- No then() em que o conteudo é processado e carregado, voltamos a propriedade pro seu estado inicial: false. 
+

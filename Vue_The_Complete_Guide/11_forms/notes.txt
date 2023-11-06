@@ -1,0 +1,10 @@
+Resumo do modulo 
+- forms
+
+- o metodo v-model converte automaticamente um campo input que pussue um type number.
+É possivel acessar o valor desse campo como string caso utilizemos o ref ao inves do v-model. 
+
+- o v-model tambem possui o metodo trim() emutido nele: v-model.trim="variavel"; 
+
+v-model também é utilizavel em dropbox, radio e selectbox
+
