@@ -17,17 +17,17 @@ export default {
       savedSurveyResults: [],
     };
   },
-  methods: {
-    storeSurvey(surveyData) {
-      const surveyResult = {
-        name: surveyData.userName,
-        rating: surveyData.rating,
-        id: new Date().toISOString(),
-      };
-      this.savedSurveyResults.push(surveyResult);
-      console.log(surveyResult);
-    },
-  },
+  // methods: {
+  //   storeSurvey(surveyData) {
+  //     const surveyResult = {
+  //       name: surveyData.userName,
+  //       rating: surveyData.rating,
+  //       id: new Date().toISOString(),
+  //     };
+  //     this.savedSurveyResults.push(surveyResult);
+  //     console.log(surveyResult);
+  //   },
+  // },
 };
 </script>
 

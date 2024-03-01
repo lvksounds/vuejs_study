@@ -17,3 +17,7 @@
 - Essa propriedade é false por padrao. no inicio do metodo que fara o fetch, setamos para true, antes do fetch. 
 - No then() em que o conteudo é processado e carregado, voltamos a propriedade pro seu estado inicial: false. 
 
+
+-- Tratando erros eh http requests: 
+
+  
